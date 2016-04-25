@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QuizIt</string>
+    <string name="action_settings">Settings</string>
+    <string name="question_text">Enter the question</string>
+    <string name="question_list_label">Question</string>
+    <string name="question_answer_label">Answer</string>
+    <string name="bug_solved_label">Solved?</string>
+    <string name="bug_description_hint">Describe the question</string>
+    <string name="bug_list_label">Bugs</string>
+    <string name="date_picker_title">Date question was discovered</string>
+    <string name="delete_bug">Delete</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="answer_set">True (false if left unchecked)</string>
+    <string name="correct_toast"/>
+    <string name="wrong_toast"/>
+    <string name="edit_question_text">Edit Text</string>
+</resources>
