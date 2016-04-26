@@ -11,13 +11,13 @@ import org.json.JSONObject;
 public class Question {
     private UUID mId;
     /** Text of question */
-    private String mQuestion;
+    private String mQuestion = "";
 
     /** Description of question */
     //private String mmAnswer;
 
     /**Answer to question (true/false)*/
-    private boolean mAnswer;
+    private boolean mAnswer = false;
 
     public Question(){
         //Generate unique identifier for the new question.
@@ -36,25 +36,22 @@ public class Question {
         return mId;
     }
 
-    public String getmTitle() {
-        return mQuestion;
-    }
+    //public String getmTitle() {
+    //    return mQuestion;
+    //}
 
-    public void setmTitle (String title) {
-        mQuestion = title;
-    }
 
     //public String getmAnswer() {return mmAnswer; }
     //public void setmDescription(String description) {
     //    mmAnswer = description; } //comment
-    public boolean ismSolved() {return mAnswer; }
+    public boolean getAnswer() {return mAnswer; }
     public void setmSolved(boolean solved) {
         mAnswer = solved; }
 
     private static final String JSON_ID = "id";
-    private static final String JSON_TEXT = "title";
-    private static final String sdfg = "description";
-    private static final String JSON_ANSWER = "solved";
+    private static final String JSON_TEXT = "question";
+    //private static final String sdfg = "description";
+    private static final String JSON_ANSWER = "answer";
 
     public Question(JSONObject json) throws JSONException {
         mId = UUID.fromString(json.getString(JSON_ID));
@@ -77,7 +74,6 @@ public class Question {
     }
 
     public boolean isTrue() {
-        mAnswer = true;
         return mAnswer;
     }
 

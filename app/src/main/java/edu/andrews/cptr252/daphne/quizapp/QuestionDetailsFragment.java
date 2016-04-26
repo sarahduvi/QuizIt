@@ -44,6 +44,7 @@ public class QuestionDetailsFragment extends Fragment {
     private EditText mQuestionField;
 
     private static final String TAG = "QuestionDetailsFragment";
+
     /**Reference to answer checkbox*/
     private CheckBox mAnswerCheckBox;
 
@@ -70,13 +71,13 @@ public class QuestionDetailsFragment extends Fragment {
 
         UUID questionId = (UUID)getArguments().getSerializable(EXTRA_QUESTION_ID);
 
-        //Get the question with the id from the bundle
-        //this will be the question that the fragment displays
+        //gets the correct question to display
         mQuestion = QuestionList.getInstance(getActivity()).getQuestion(questionId);
+
 
     }
 
-    //Create the view for the layout used to add a question to a list
+    //Creates view for layout which will be adding a question to the list
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -107,7 +108,7 @@ public class QuestionDetailsFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mQuestion.setAnswer(isChecked);
-                Log.d(TAG, "Set solved status to " + isChecked);
+                Log.d(TAG, "Set answer to " + isChecked);
                 mCallbacks.onQuestionUpdated(mQuestion);
             }
         });
@@ -115,7 +116,7 @@ public class QuestionDetailsFragment extends Fragment {
     }
 
     /**
-     * saves Question when user exits the fragment_question_add layout
+     * saves Question when user exits the fragment_add_question layout
      */
     @Override
     public void onPause() {

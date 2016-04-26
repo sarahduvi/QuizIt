@@ -15,8 +15,8 @@ public class QuestionListActivity extends SingleFragmentActivity
 
     public void onQuestionSelected(Question question) {
         if (findViewById(R.id.detailFragmentContainer) == null) {
-            Intent i = new Intent(this, QuizModeDetailsActivity.class);
-            //i.putExtra(QuestionDetailsFragment.EXTRA_BUG_ID, question.getmId());
+            Intent i = new Intent(this, QuestionDetailsActivity.class);
+            i.putExtra(QuestionDetailsFragment.EXTRA_QUESTION_ID, question.getmId()); //was commented out
             startActivityForResult(i, 0);
         } else {
             FragmentManager fm = getSupportFragmentManager();
@@ -34,7 +34,9 @@ public class QuestionListActivity extends SingleFragmentActivity
         }
     }
 
-    public void onBugUpdated(Question question) {
+
+    @Override //wasnt here
+    public void onQuestionUpdated(Question question) { // was on bug updated instead
         FragmentManager fm = getSupportFragmentManager();
         QuestionListFragment listFragment = (QuestionListFragment)
                 fm.findFragmentById(R.id.fragment_container);
@@ -52,8 +54,8 @@ public class QuestionListActivity extends SingleFragmentActivity
         return R.layout.activity_masterdetail;
     }
 
-    @Override
-    public void onQuestionUpdated(Question question) {
+    //@Override
+    //public void onQuestionUpdated(Question question) {
 
-    }
+    //}
 }

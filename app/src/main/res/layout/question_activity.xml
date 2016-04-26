@@ -7,10 +7,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/question_text"
+        android:text="@string/question_text"
+        android:id="@+id/question_text_textView"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="100dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,5 +25,19 @@
         android:text="False"
         android:id="@+id/false_button"
         android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/next_button"
+        android:layout_gravity="right"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/previous_button"
+        />
 
 </LinearLayout>

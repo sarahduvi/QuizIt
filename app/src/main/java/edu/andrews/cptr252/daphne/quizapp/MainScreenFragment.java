@@ -38,9 +38,9 @@ public class MainScreenFragment extends Fragment {
             public void onClick(View view) {
                 //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
-                //QuizMode.getInstance(getActivity()).getQuestions();
+                //QuizModeActivity.getInstance(getActivity()).getQuestions();
                 //view = inflater.inflate(R.layout.quiz_mode_fragment, container);
-                Intent intent = new Intent(getActivity().getApplicationContext(), QuizModeDetailsActivity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), QuizModeActivity.class);
                 startActivity(intent);
             }
         });

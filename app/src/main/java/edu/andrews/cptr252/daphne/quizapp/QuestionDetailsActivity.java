@@ -1,6 +1,8 @@
 package edu.andrews.cptr252.daphne.quizapp;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -8,17 +10,20 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class QuizModeDetailsActivity extends SingleFragmentActivity {
+public class QuestionDetailsActivity extends FragmentActivity implements QuestionDetailsFragment.Callbacks{
 
-    @Override
-    protected Fragment createFragment() {return new QuizModeFragment();
-    }
+    //@Override
+    //protected Fragment createFragment() {return new QuizModeFragment();
+    //}
 
-    /*public void onQuestionUpdated(Question question) {
+
+    public void onQuestionUpdated(Question question) {
         //do nothing
     }
 
@@ -72,8 +77,8 @@ public class QuizModeDetailsActivity extends SingleFragmentActivity {
             @Override
             public void onPageSelected(int i) {
                 Question question = mQuestions.get(i);
-                if (question.getmTitle() != null) {
-                    setTitle(question.getmTitle());
+                if (question.getQuestion() != null) {
+                    setTitle(question.getQuestion());
                 }
             }
 

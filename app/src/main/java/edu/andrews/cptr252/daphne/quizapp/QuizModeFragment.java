@@ -43,7 +43,7 @@ public class QuizModeFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.edit_question_activity, container, false);
+        View v = inflater.inflate(R.layout.question_activity, container, false);
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState != null) {

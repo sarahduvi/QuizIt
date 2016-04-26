@@ -73,10 +73,10 @@ public class QuestionListFragment extends ListFragment {
             Question question = getItem(position);
 
             TextView titleTextView = (TextView) convertView.findViewById(R.id.question_list_item_titleTextView);
-            titleTextView.setText(question.getmTitle());
+            titleTextView.setText(question.getQuestion());
 
             CheckBox solvedCheckBox = (CheckBox) convertView.findViewById(R.id.question_answered_checkbox);
-            solvedCheckBox.setChecked(question.ismSolved());
+            solvedCheckBox.setChecked(question.getAnswer());
 
             return convertView;
         }
@@ -95,7 +95,7 @@ public class QuestionListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Question question = (Question)(getListAdapter()).getItem(position);
-        Log.d(TAG, question.getmTitle() + "was clicked");
+        Log.d(TAG, question.getQuestion() + "was clicked");
 
         mCallbacks.onQuestionSelected(question);
     }
@@ -161,11 +161,11 @@ public class QuestionListFragment extends ListFragment {
             }
 
             public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false; //nothing to do
+                return false; //intentionally blank
             }
 
             public void onDestroyActionMode(ActionMode mode) {
-                //nothing to do
+                //intentionally blank
             }
 
         });
